@@ -26,6 +26,7 @@ import requests
 import postfile     #postfile module
 import requests     #requests module
 
+
 """Main method"""
 def main(argv):#argv -> argument vector (a one-dimensional array of strings) that holds all the commandline arguments
 
@@ -42,6 +43,7 @@ def main(argv):#argv -> argument vector (a one-dimensional array of strings) tha
 
     """Search our local Honeypot -> honeypot.json"""
     try:
+
         for arg in argv:#iterate over each cmd line argument
             ipaddr=((re.findall(r'\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}', arg)))#regex for ip addresses
 
@@ -92,15 +94,26 @@ def main(argv):#argv -> argument vector (a one-dimensional array of strings) tha
                 #end of for
                 
     except Exception as e:
-        print(str(e))
+        print(str(e)) 
 
 
     #File checking
      
     for arg in argv:
+
         if os.path.isfile(arg):#if cmd line argument contains the ip address, then capture it
             fname=arg#store the file path in "fname"
             fileScan(fname)#Call the apis to scan given file
+            #end of for
+            
+
+    #Hash checking
+    for arg in argv:
+        _hash=re.findall("([a-fA-F\d]{32})", arg)
+        if _hash:
+            hsh=("%s" % (''.join(((_hash)))))
+            print(hsh)
+            hashScan(hsh)#Call the apis to scan given file
             #end of for
 
         
@@ -217,6 +230,17 @@ def fileScan(fname):
     print('\n')
 
     
+def hashScan(hsh):
+        
+    #scanning hashes
+
+    url = "https://hashlookup.metadefender.com/v2/hash/"+hsh
+
+    headers = {'apikey': "b3eba1d13814f0ba795840afb01e76f4"}
+
+    response = requests.request("GET", url, headers=headers)
+
+    print(response.text)
 
     
 
