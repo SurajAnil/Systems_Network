@@ -115,7 +115,7 @@ void mainLoop()
 	while(msgSize != 0)
 	{	
 		/* If the sender is not telling us that we are done, then get to work */
-		if(msgrcv(msqid, &msg,sizeof(message)-sizeof(long), SENDER_DATA_TYPE, 0)<0){
+		if(msgrcv(msqid, &msg,sizeof(message)-sizeof(long), SENDER_DATA_TYPE, 0)==-1){
 		 perror("problem with receiving from msgrcv");
 		 fclose(fp);
 		 exit(-1);
@@ -198,6 +198,8 @@ int main(int argc, char** argv)
  	 * queues and shared memory before exiting. You may add the cleaning functionality
  	 * in ctrlCSignal().
  	 */
+
+	(void) signal(SIGINT, ctrlCSignal);
 				
 	/* Initialize */
 	init(shmid, msqid, sharedMemPtr);
