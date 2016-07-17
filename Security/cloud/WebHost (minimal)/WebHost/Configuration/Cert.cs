@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Configuration
+namespace WebHost.Configuration
 {
-    public class Certificate
+    public class Cert
     {
         public static X509Certificate2 Load()
         {
-            var assembly = typeof(Certificate).Assembly;
+            var assembly = typeof(Cert).Assembly;
             using (var stream = assembly.GetManifestResourceStream("WebHost.Configuration.idsrv3test.pfx"))
             {
                 return new X509Certificate2(ReadStream(stream), "idsrv3test");

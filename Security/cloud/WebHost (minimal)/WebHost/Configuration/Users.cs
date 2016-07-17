@@ -17,12 +17,12 @@ namespace WebHost.Configuration
                     Password = "secret",
                     Subject = "1",
 
-                    Claims = new[]
+                    Claims = new List<Claim>
                     {
                         new Claim(Constants.ClaimTypes.GivenName, "Bob"),
                         new Claim(Constants.ClaimTypes.FamilyName, "Smith"),
                         new Claim(Constants.ClaimTypes.Role, "Geek"),
-                        new Claim(Constants.ClaimTypes.Role, "Foo")
+                        new Claim(Constants.ClaimTypes.Email, "bob@foo.com")
                     }
                 }
             };

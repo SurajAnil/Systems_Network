@@ -7,6 +7,7 @@ namespace WebHost.Configuration
     {
         public static IEnumerable<Scope> Get()
         {
+            /*
             var scopes = new List<Scope>
             {
                 new Scope
@@ -37,6 +38,17 @@ namespace WebHost.Configuration
             scopes.AddRange(StandardScopes.All);
 
             return scopes;
+            */
+
+            return new List<Scope>
+            {
+                StandardScopes.OpenId,
+                StandardScopes.Roles,
+                StandardScopes.Profile,
+                StandardScopes.Email,
+                StandardScopes.OfflineAccess
+
+            };
         }
     }
 }
