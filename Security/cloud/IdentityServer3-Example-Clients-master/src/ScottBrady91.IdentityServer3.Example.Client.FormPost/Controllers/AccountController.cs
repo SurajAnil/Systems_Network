@@ -13,7 +13,7 @@ namespace ScottBrady91.IdentityServer3.Example.Client.FormPost.Controllers
     {
         private const string ClientUri = @"https://localhost:44304";
         private const string CallbackEndpoint = ClientUri + @"/account/signInCallback";
-        private const string IdServBaseUri = @"https://localhost:44300/core";
+        private const string IdServBaseUri = @"https://localhost:44333/core";
         private const string AuthorizeUri = IdServBaseUri + @"/connect/authorize";
         private const string LogoutUri = IdServBaseUri + @"/connect/endsession";
 
@@ -23,9 +23,9 @@ namespace ScottBrady91.IdentityServer3.Example.Client.FormPost.Controllers
             var nonce = Guid.NewGuid().ToString("N");
 
             var url = AuthorizeUri +
-                      "?client_id=implicitclient" +
+                      "?client_id=mvc" +
                       "&response_type=id_token" +
-                      "&scope=openid email profile" +
+                      "&scope=openid email" +
                       "&redirect_uri=" + CallbackEndpoint +
                       "&response_mode=form_post" +
                       "&state=" + state +
@@ -82,7 +82,7 @@ namespace ScottBrady91.IdentityServer3.Example.Client.FormPost.Controllers
 
             var parameters = new TokenValidationParameters
             {
-                ValidAudience = "implicitclient",
+                ValidAudience = "mvc",
                 ValidIssuer = IdServBaseUri,
                 IssuerSigningToken = new X509SecurityToken(cert)
             };

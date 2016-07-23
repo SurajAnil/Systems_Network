@@ -18,3 +18,4 @@ B:\GitRepo\Systems_Network\Security\cloud\WebHost (minimal)\WebHost\bin\Serilog.
 B:\GitRepo\Systems_Network\Security\cloud\WebHost (minimal)\WebHost\bin\Serilog.FullNetFx.xml
 B:\GitRepo\Systems_Network\Security\cloud\WebHost (minimal)\WebHost\obj\Debug\WebHost.dll
 B:\GitRepo\Systems_Network\Security\cloud\WebHost (minimal)\WebHost\obj\Debug\WebHost.pdb
+B:\GitRepo\Systems_Network\Security\cloud\WebHost (minimal)\WebHost\bin\Configuration\idsrv3test.pfx
