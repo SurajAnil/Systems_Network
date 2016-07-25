@@ -13,11 +13,13 @@ namespace WebHost
     {
         public void Configuration(IAppBuilder app)
         {
-            /*
+            
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Trace(outputTemplate: "{Timestamp} [{Level}] ({Name}){NewLine} {Message}{NewLine}{Exception}")
                 .CreateLogger();
-                */
+                
+            
+                
             var factory = new IdentityServerServiceFactory()
                         .UseInMemoryUsers(Users.Get())
                         .UseInMemoryClients(Clients.Get())
@@ -27,8 +29,12 @@ namespace WebHost
             {
                 RequireSsl = true,
                 SigningCertificate = Cert.Load(),
+                
                 Factory = factory,
-                AuthenticationOptions = new AuthenticationOptions { EnablePostSignOutAutoRedirect = true }
+                AuthenticationOptions = new AuthenticationOptions
+                {
+                    EnablePostSignOutAutoRedirect = true
+                }
 
             };
 

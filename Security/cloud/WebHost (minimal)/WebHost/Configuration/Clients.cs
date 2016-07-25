@@ -10,42 +10,73 @@ namespace WebHost.Configuration
         {
             return new List<Client>
             {
+                //new Client
+                //{
+                //    ClientId = @"mvc",
+                //    ClientName = @"Example Implicit Client",
+                //    Enabled = true,
+                //    Flow = Flows.Implicit,
+                //    RequireConsent = true,
+                //    AllowRememberConsent = true,
+                //    RedirectUris = new List<string> {"https://localhost:44304/account/signInCallback"},
+                //    PostLogoutRedirectUris = new List<string> {"https://localhost:44304/"},
+                //    AllowedScopes = 
+                //        new List<string>
+                //        {
+                //            Constants.StandardScopes.OpenId,
+                //            Constants.StandardScopes.Profile,
+                //            Constants.StandardScopes.Email
+                //        },
+                //    AccessTokenType = AccessTokenType.Jwt
+                //},
+                
+                //new Client
+                //{
+                //    ClientId = @"hybridclient",
+                //    ClientName = @"Example Hybrid Client",
+                //    ClientSecrets = new List<Secret>
+                //    {
+                //        new Secret("idsrv3test".Sha256())
+                //    },
+                //    Enabled = true,
+                //    Flow = Flows.Hybrid,
+                //    RequireConsent = true,
+                //    AllowRememberConsent = true,
+                //    RedirectUris = new List<string>
+                //    {
+                //        "https://localhost:44305/"
+                //    },
+                //    PostLogoutRedirectUris = new List<string>
+                //    {
+                //        "https://localhost:44305/"
+                //    },
+                //    AllowedScopes = new List<string>
+                //    {
+                //        Constants.StandardScopes.OpenId,
+                //        Constants.StandardScopes.Profile,
+                //        Constants.StandardScopes.Email,
+                //        Constants.StandardScopes.Roles,
+                //        Constants.StandardScopes.OfflineAccess
+                //    },
+                //    AccessTokenType = AccessTokenType.Jwt
+                //},
+
                 new Client
                 {
-                    ClientId = @"mvc",
-                    ClientName = @"Example Implicit Client",
-                    Enabled = true,
-                    Flow = Flows.Implicit,
-                    RequireConsent = true,
-                    AllowRememberConsent = true,
-                    RedirectUris = new List<string> {"https://localhost:44304/account/signInCallback"},
-                    PostLogoutRedirectUris = new List<string> {"https://localhost:44304/"},
-                    AllowedScopes = 
-                        new List<string>
-                        {
-                            Constants.StandardScopes.OpenId,
-                            Constants.StandardScopes.Profile,
-                            Constants.StandardScopes.Email
-                        },
-                    AccessTokenType = AccessTokenType.Jwt
-                }
-                /*
-                ,
-                new Client
-                {
-                    ClientId = @"hybridclient",
-                    ClientName = @"Example Hybrid Client",
+                    ClientId = @"acfClient",
+                    ClientName = @"Authorization Code Flow",
                     ClientSecrets = new List<Secret>
                     {
                         new Secret("idsrv3test".Sha256())
                     },
                     Enabled = true,
-                    Flow = Flows.Hybrid,
+                    Flow = Flows.AuthorizationCode,
                     RequireConsent = true,
                     AllowRememberConsent = true,
                     RedirectUris = new List<string>
                     {
-                        "https://localhost:44305/"
+                        "https://localhost:44305/",
+                        "https://localhost:44305/Home/AuthorizationCallback"
                     },
                     PostLogoutRedirectUris = new List<string>
                     {
@@ -55,13 +86,13 @@ namespace WebHost.Configuration
                     {
                         Constants.StandardScopes.OpenId,
                         Constants.StandardScopes.Profile,
-                        Constants.StandardScopes.Email,
-                        Constants.StandardScopes.Roles,
-                        Constants.StandardScopes.OfflineAccess
+                        //Constants.StandardScopes.Email,
+                        //Constants.StandardScopes.Roles,
+                        //Constants.StandardScopes.OfflineAccess
                     },
                     AccessTokenType = AccessTokenType.Jwt
                 }
-                */
+
             };
         }
     }

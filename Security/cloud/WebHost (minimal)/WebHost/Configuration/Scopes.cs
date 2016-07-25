@@ -10,10 +10,10 @@ namespace WebHost.Configuration
             return new List<Scope>
             {
                 StandardScopes.OpenId,
-                StandardScopes.Roles,
+                //StandardScopes.Roles,
                 StandardScopes.Profile,
-                StandardScopes.Email,
-                StandardScopes.OfflineAccess
+                //StandardScopes.Email,
+                //StandardScopes.OfflineAccess
             };
         }
     }
