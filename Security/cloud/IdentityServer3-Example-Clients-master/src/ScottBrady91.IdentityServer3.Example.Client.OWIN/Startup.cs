@@ -18,7 +18,7 @@ namespace ScottBrady91.IdentityServer3.Example.Client.OWIN
     public class Startup
     {
         private const string ClientUri = @"https://localhost:44305/";
-        private const string IdServBaseUri = @"https://localhost:44300/core";
+        private const string IdServBaseUri = @"https://localhost:44333/core";
         private const string UserInfoEndpoint = IdServBaseUri + @"/connect/userinfo";
         private const string TokenEndpoint = IdServBaseUri + @"/connect/token";
 
