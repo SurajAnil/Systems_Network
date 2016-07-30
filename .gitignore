@@ -134,10 +134,20 @@ publish/
 *.nupkg
 # The packages folder can be ignored because of Package Restore
 **/packages/*
+##WebHost Minimal
 ./Security/cloud/WebHost\ \(minimal\)/packages
 ./Security/cloud/WebHost\ \(minimal\)/.vs
 ./Securitycloud/WebHost\ \(minimal\)/Webhost/bin
 ./Securitycloud/WebHost\ \(minimal\)/Webhost/obj
+
+##CustomUserService
+
+##MvcFormPostClient
+./Security/cloud/MvcFormPostClient/.vs
+./Security/cloud/MvcFormPostClient/obj
+./Security/cloud/MvcFormPostClient/packages
+
+
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
 # If using the old MSBuild-Integrated Package Restore, uncomment this:
