@@ -136,6 +136,8 @@ publish/
 **/packages/*
 ./Security/cloud/WebHost\ \(minimal\)/packages
 ./Security/cloud/WebHost\ \(minimal\)/.vs
+./Securitycloud/WebHost\ \(minimal\)/Webhost/bin
+./Securitycloud/WebHost\ \(minimal\)/Webhost/obj
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
 # If using the old MSBuild-Integrated Package Restore, uncomment this:
