@@ -1,6 +1,7 @@
 PROJECT NAME:
 --------------
 Threat Intel
+This project is intented to analyse components to ensure they are not compromised. The project deals with scanning of IP addresses, Network ports, URLs, Files and Hashes. We use a public based honeypot and several apis to determine the IOC.
 
 -->threatintel.py
 
